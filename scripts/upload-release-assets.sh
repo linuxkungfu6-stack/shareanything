@@ -113,8 +113,31 @@ API="https://api.github.com/repos/${REPO}"
 AUTH_HEADER="Authorization: Bearer ${GITHUB_TOKEN}"
 ACCEPT_HEADER='Accept: application/vnd.github+json'
 
-release_json="$(mktemp)"
-trap 'rm -f "$release_json"' EXIT
+response_dir="$(mktemp -d)"
+release_json="$response_dir/release.json"
+trap 'rm -rf "$response_dir"' EXIT
+
+# Keep HTTP error bodies, including on older macOS curl versions that lack
+# --fail-with-body. Transport failures must still stop the script.
+request() {
+    local output="$1" status curl_status=0
+    shift
+    status="$(curl -sS -o "$output" -w '%{http_code}' \
+        -H "$AUTH_HEADER" -H "$ACCEPT_HEADER" "$@")" || curl_status=$?
+    if ((curl_status != 0)) || [[ "$status" != 2?? ]]; then
+        printf 'Error: request failed (HTTP %s, curl exit %s).\n' "$status" "$curl_status" >&2
+        if [[ -s "$output" ]]; then
+            cat "$output" >&2
+            printf '\n' >&2
+        fi
+        if [[ "$status" == '403' ]]; then
+            printf '%s\n' \
+                'Check that GITHUB_TOKEN has access to this repository and Contents: Read and write permission.' \
+                'Also check organization approval/SSO, rate limits, and any proxy rejection in the response above.' >&2
+        fi
+        return 1
+    fi
+}
 
 release_status="$(curl -sS -o "$release_json" -w '%{http_code}' \
     -H "$AUTH_HEADER" -H "$ACCEPT_HEADER" \
@@ -122,8 +145,7 @@ release_status="$(curl -sS -o "$release_json" -w '%{http_code}' \
 
 if [[ "$release_status" == '404' && "$CREATE_RELEASE" == true ]]; then
     printf 'Creating GitHub Release %s...\n' "$TAG"
-    curl -sS -f \
-        -H "$AUTH_HEADER" -H "$ACCEPT_HEADER" \
+    request "$release_json" \
         -H 'Content-Type: application/json' \
         -d "$(python3 - "$TAG" <<'PY'
 import json
@@ -131,9 +153,14 @@ import sys
 print(json.dumps({'tag_name': sys.argv[1], 'name': sys.argv[1]}))
 PY
 )" \
-        "$API/releases" > "$release_json"
+        "$API/releases"
 elif [[ "$release_status" != '200' ]]; then
-    printf 'Error: could not find Release %s in %s (HTTP %s). Use --create to create it.\n' "$TAG" "$REPO" "$release_status" >&2
+    printf 'Error: could not find Release %s in %s (HTTP %s).\n' "$TAG" "$REPO" "$release_status" >&2
+    cat "$release_json" >&2
+    printf '\n' >&2
+    if [[ "$release_status" == '404' ]]; then
+        printf 'Check repository/token access; use --create if the Release does not exist.\n' >&2
+    fi
     exit 1
 fi
 
@@ -164,11 +191,10 @@ PY
     esac
 
     printf 'Uploading %s...\n' "$asset_name"
-    curl -sS -f \
-        -H "$AUTH_HEADER" -H "$ACCEPT_HEADER" \
+    request "$response_dir/upload.json" \
         -H "Content-Type: $content_type" \
         --data-binary "@$asset" \
-        "$upload_url?name=$encoded_name" >/dev/null
+        "$upload_url?name=$encoded_name"
 done
 
 printf 'Uploaded %d asset(s) to https://github.com/%s/releases/tag/%s\n' "${#ASSETS[@]}" "$REPO" "$TAG"
