@@ -4,125 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light">
-  <title>下载 Share Anything</title>
+  <title>Share Anything · 分享，就该这么简单</title>
   <link rel="icon" type="image/png" href="./app-icon.png">
   <link rel="apple-touch-icon" href="./app-icon.png">
-  <meta name="description" content="下载 Share Anything，支持 macOS、Windows 和 Android。">
+  <meta name="description" content="Share Anything，让设备之间的分享变得简单、直接、没有边界。支持 macOS、Windows、iOS 和 Android。">
   <style>
-    :root{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif;color:#172720;background:#f5f7f3;font-synthesis:none}*{box-sizing:border-box}body{margin:0}a{color:inherit}a:focus-visible{outline:3px solid #327b51;outline-offset:5px}header,main,footer{max-width:1080px;margin:auto;padding:0 28px}header{height:100px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-size:18px;font-weight:750;text-decoration:none;display:flex;align-items:center;gap:10px}.mark{display:block;width:34px;height:34px;object-fit:contain;flex-shrink:0}header>a:last-child{font-size:14px;text-underline-offset:5px}.hero{padding:66px 0 52px;max-width:780px}.eyebrow{font-size:12px;letter-spacing:2px;font-weight:700;color:#54705b}.hero h1{font-size:clamp(38px,6vw,68px);line-height:1.15;letter-spacing:-2px;margin:22px 0}.hero p{color:#657167;line-height:1.8;font-size:17px}.status{display:inline-flex;gap:8px;align-items:center;font-size:13px;color:#4e6756;margin-top:14px}.status:before{content:"";width:7px;height:7px;border-radius:50%;background:#54845d}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:#fff;border:1px solid #dfe5dc;border-radius:20px;padding:28px;display:flex;flex-direction:column}.icon{width:48px;height:48px;border-radius:13px;background:#edf2e9;display:grid;place-items:center;font-size:25px;font-weight:600;margin-bottom:30px}.card h2{font-size:25px;margin:0 0 8px}.description{font-size:14px;color:#6c776e;margin:0 0 26px;line-height:1.7;min-height:48px}.actions{display:grid;gap:10px;margin-top:auto}.button{display:flex;align-items:center;justify-content:space-between;gap:10px;text-decoration:none;border:1px solid #d8e0d5;border-radius:10px;padding:14px;font-size:14px;font-weight:600;transition:background .15s}.button:hover{background:#eef3ea}.button.primary{color:white;background:#234d38;border-color:#234d38}.button.primary:hover{background:#326448}.hint{font-size:12px;color:#748075;line-height:1.8;margin:16px 0 0}.help{margin:30px 0 64px;border-top:1px solid #dce3d8;padding-top:25px;display:flex;gap:24px;justify-content:space-between;color:#657167;font-size:13px;line-height:1.8}.help p{margin:0;max-width:710px}.help a{white-space:nowrap;text-underline-offset:4px}footer{border-top:1px solid #dce3d8;padding-top:24px;padding-bottom:30px;font-size:12px;color:#758075;display:flex;justify-content:space-between;gap:16px}@media(max-width:800px){.grid{grid-template-columns:1fr}.hero{padding-top:35px}.card{padding:24px}.icon{margin-bottom:20px}.description{min-height:0}.help{flex-direction:column;gap:12px}header,main,footer{padding-left:20px;padding-right:20px}footer{flex-wrap:wrap}}
-    [data-i18n]{white-space:pre-line}.header-actions{display:flex;align-items:center;gap:16px;font-size:14px}#language{font:inherit;color:inherit;background:white;border:1px solid #d8e0d5;border-radius:8px;padding:8px;max-width:130px}#language:focus-visible{outline:3px solid #327b51;outline-offset:3px}@media(max-width:480px){header{height:auto;min-height:100px;flex-wrap:wrap;padding-top:20px;padding-bottom:20px}.header-actions{margin-left:auto}}
+    :root{font-family:Georgia,"Songti SC","Noto Serif SC",serif;color:#17251d;background:#f4f1e9;font-synthesis:none;--ink:#17251d;--muted:#667269;--green:#1e503a;--lime:#dce8bd;--line:rgba(23,37,29,.16)}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 90% 8%,#e5edcc 0,transparent 28rem),#f4f1e9}a{color:inherit}a:focus-visible{outline:3px solid #cf5f35;outline-offset:5px}.wrap{width:min(1160px,calc(100% - 56px));margin:auto}.topbar{height:90px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif}.brand{font-size:18px;font-weight:800;display:flex;gap:11px;align-items:center;text-decoration:none;letter-spacing:-.3px}.mark{width:35px;height:35px;object-fit:contain}.nav{display:flex;gap:28px;align-items:center;font-size:14px}.nav a{text-decoration:none}.nav .download{background:var(--ink);color:#fff;padding:11px 17px;border-radius:999px}.hero{min-height:650px;display:grid;grid-template-columns:1.06fr .94fr;align-items:center;gap:8%;padding:76px 0 92px}.eyebrow{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#c25d35;font-size:12px;letter-spacing:2.4px;font-weight:750}.hero h1{font-size:clamp(48px,7vw,92px);line-height:1.02;letter-spacing:-5px;font-weight:500;margin:24px 0 28px;max-width:700px}.hero h1 em{font-style:normal;color:#c25d35}.lead{font-size:19px;line-height:1.75;color:var(--muted);max-width:530px;margin:0}.actions{display:flex;align-items:center;gap:20px;margin-top:38px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif}.button{display:inline-flex;align-items:center;gap:12px;text-decoration:none;font-size:14px;font-weight:700;border-radius:999px;padding:15px 21px}.button.primary{background:var(--green);color:#fff}.button.text{padding-left:0;color:var(--ink)}.arrow{font-size:18px}.showcase{position:relative;min-height:420px;background:#203d30;border-radius:30px;overflow:hidden;padding:36px;color:#f5f1e8;box-shadow:20px 24px 0 #d8dfc3}.showcase:before{content:"";position:absolute;width:320px;height:320px;border:1px solid rgba(220,232,189,.45);border-radius:50%;right:-115px;top:-88px}.showcase:after{content:"";position:absolute;width:160px;height:160px;border:1px solid rgba(220,232,189,.3);border-radius:50%;right:5px;top:20px}.showcase-label{position:relative;z-index:1;font:11px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:2px;color:#c8db9d}.share-card{position:absolute;z-index:1;left:36px;right:36px;bottom:35px;border-top:1px solid rgba(255,255,255,.3);padding-top:20px}.share-card strong{display:block;font-size:31px;font-weight:500;letter-spacing:-1px}.share-card span{display:block;margin-top:8px;font:13px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#bfd0bd}.orbit{position:absolute;left:50%;top:47%;transform:translate(-50%,-50%);width:190px;height:190px;border-radius:50%;border:1px solid #a9c981;display:grid;place-items:center}.orbit:before,.orbit:after{content:"";position:absolute;border-radius:50%;background:#dce8bd}.orbit:before{width:12px;height:12px;top:8px;left:23px}.orbit:after{width:7px;height:7px;right:9px;bottom:45px}.orbit-core{width:70px;height:70px;border-radius:20px;background:#dce8bd;display:grid;place-items:center;color:#203d30;font:700 20px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;transform:rotate(-8deg)}.section{padding:90px 0}.section-header{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:42px}.section-kicker{font:12px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#c25d35;letter-spacing:2px;font-weight:750}.section h2{font-size:clamp(34px,4vw,54px);line-height:1.08;font-weight:500;letter-spacing:-2px;margin:14px 0 0}.section-header p{max-width:300px;color:var(--muted);line-height:1.7;margin:0;font-size:15px}.features{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}.feature{background:#f4f1e9;padding:30px;min-height:220px}.feature-number{font:12px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#c25d35}.feature h3{font-size:23px;font-weight:500;margin:42px 0 12px}.feature p{font:14px -apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif;line-height:1.7;color:var(--muted);margin:0}.band{background:var(--lime);padding:75px 0}.band-inner{display:flex;align-items:center;justify-content:space-between;gap:40px}.band h2{font-size:clamp(34px,5vw,64px);letter-spacing:-3px;font-weight:500;line-height:1.05;margin:0;max-width:700px}.band p{font:15px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#516154;line-height:1.7;max-width:310px;margin:0}.footer{font:13px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#667269;padding:28px 0 38px;display:flex;justify-content:space-between}.footer a{text-decoration:none}.language{font:inherit;border:0;background:transparent;color:inherit;font-size:13px}@media(max-width:760px){.wrap{width:min(100% - 40px,620px)}.topbar{height:76px}.nav{gap:14px}.nav a:not(.download){display:none}.hero{display:block;padding:65px 0 84px;min-height:0}.hero h1{letter-spacing:-3px}.showcase{margin:65px 8px 0;min-height:360px}.section{padding:65px 0}.section-header,.band-inner{display:block}.section-header p{margin-top:20px}.features{grid-template-columns:1fr}.feature{min-height:180px}.feature h3{margin-top:28px}.band h2{margin-bottom:25px}.footer{display:block}.footer span{display:block;margin-top:10px}}
   </style>
 </head>
 <body>
-  <header><a class="brand" href="./"><img class="mark" src="./app-icon.png" alt="" width="34" height="34">Share Anything</a><nav class="header-actions"><select id="language" aria-label="Language / 语言"><option value="auto">自动 / Auto</option><option value="zh">简体中文</option><option value="en">English</option></select><a href="https://github.com/linuxkungfu6-stack/shareanything">GitHub ↗</a></nav></header>
+  <header class="topbar wrap"><a class="brand" href="./"><img class="mark" src="./app-icon.png" alt="" width="35" height="35">Share Anything</a><nav class="nav" aria-label="主导航"><a href="#features" data-i18n="navFeatures">为什么选择</a><select class="language" id="language" aria-label="Language / 语言"><option value="auto">自动 / Auto</option><option value="zh">简体中文</option><option value="en">English</option></select><a href="./downloads.html" class="download" data-i18n="download">立即下载 <span aria-hidden="true">↗</span></a></nav></header>
   <main>
-    <section class="hero"><div class="eyebrow">SHARE ANYTHING · DOWNLOAD</div><h1><span data-i18n="heading">选择你的设备，<br>即刻开始。</span></h1><p><span data-i18n="intro">下载适合你设备的 Share Anything。<br>桌面安装包通过 GitHub Releases 提供，Android 版本<span data-i18n="play">前往 Google Play</span>。</span></p><div class="status" id="release-status" aria-live="polite">桌面下载指向最新正式版</div></section>
-    <section class="grid" aria-label="选择下载平台">
-      <article class="card"><div class="icon" aria-hidden="true">⌘</div><h2>macOS</h2><p class="description"><span data-i18n="macDescription">为 <span data-i18n="apple">Apple 芯片</span>和 <span data-i18n="intel">Intel 芯片</span>的 Mac<br>选择对应安装包。</span></p><div class="actions"><a class="button primary" data-platform="mac-arm64" href="https://github.com/linuxkungfu6-stack/shareanything/releases/latest/download/Share.Anything-mac-arm64.dmg">Apple 芯片 <span aria-hidden="true">↓</span></a><a class="button" data-platform="mac-x64" href="https://github.com/linuxkungfu6-stack/shareanything/releases/latest/download/Share.Anything-mac-x64.dmg">Intel 芯片 <span aria-hidden="true">↓</span></a></div><p class="hint"><span data-i18n="macHint">在“关于本机”中查看你的芯片类型。</span></p></article>
-      <article class="card"><div class="icon" aria-hidden="true">⊞</div><h2>Windows</h2><p class="description"><span data-i18n="windowsDescription">支持常见 Intel / AMD 电脑<br>及搭载 ARM 芯片的 Windows 设备。</span></p><div class="actions"><a class="button primary" data-platform="win-x64" href="https://github.com/linuxkungfu6-stack/shareanything/releases/latest/download/Share.Anything-win-x64.exe">Windows x64 <span aria-hidden="true">↓</span></a><a class="button" data-platform="win-arm64" href="https://github.com/linuxkungfu6-stack/shareanything/releases/latest/download/Share.Anything-win-arm64.exe">Windows ARM64 <span aria-hidden="true">↓</span></a></div><p class="hint"><span data-i18n="windowsHint">在“设置 → 系统 → 关于”中查看系统类型。</span></p></article>
-      <article class="card"><div class="icon" aria-hidden="true">▷</div><h2>Android</h2><p class="description"><span data-i18n="androidDescription">通过 Google Play 获取应用，<br>并管理后续更新。</span></p><div class="actions"><a class="button primary" href="https://play.google.com/store/apps/details?id=com.kungapp.shareanything">前往 Google Play <span aria-hidden="true">↗</span></a></div><p class="hint"><span data-i18n="androidHint">设备兼容性与可用地区以商店页面为准。</span></p></article>
-    </section>
-    <aside class="help"><p><span data-i18n="help">不确定该选哪个版本？大多数 Intel / AMD Windows 电脑选择 x64；Apple M 系列 Mac 选择 Apple 芯片版。如果下载链接暂不可用，可前往版本页面查看附件。</span></p><a href="https://github.com/linuxkungfu6-stack/shareanything/releases/latest"><span data-i18n="latestLink">查看最新版本 ↗</span></a></aside>
+    <section class="hero wrap"><div><div class="eyebrow">A SMALL TOOL FOR BIG MOMENTS</div><h1><span data-i18n="heroStart">分享，</span><br><em data-i18n="heroAccent">就该这么简单。</em></h1><p class="lead" data-i18n="lead">Share Anything 把设备之间的分享变成一件顺手的事。轻巧、直接，不让文件传输打断你的节奏。</p><div class="actions"><a class="button primary" href="./downloads.html" data-i18n="heroDownload">选择设备并下载 <span class="arrow" aria-hidden="true">→</span></a><a class="button text" href="#features" data-i18n="learnMore">了解更多 <span class="arrow" aria-hidden="true">↓</span></a></div></div><div class="showcase" aria-label="Share Anything 产品展示"><div class="showcase-label">SHARE ANYTHING / YOUR DEVICES</div><div class="orbit"><div class="orbit-core">SA</div></div><div class="share-card"><strong>Everything, connected.</strong><span data-i18n="showcaseText">让每一次分享，都少一步等待。</span></div></div></section>
+    <section class="section wrap" id="features"><div class="section-header"><div><div class="section-kicker">MADE TO MOVE WITH YOU</div><h2><span data-i18n="featuresTitle">少一点阻力，</span><br><span data-i18n="featuresTitleSecond">多一点流动。</span></h2></div><p data-i18n="featuresIntro">从电脑到手机，从工作文件到生活照片，Share Anything 让分享回到它本来的样子：自然。</p></div><div class="features"><article class="feature"><div class="feature-number">01 / SIMPLE</div><h3 data-i18n="featureSimpleTitle">打开，就能分享</h3><p data-i18n="featureSimpleText">没有复杂的设置，没有冗长的流程。把注意力留给内容，而不是工具。</p></article><article class="feature"><div class="feature-number">02 / EVERYWHERE</div><h3 data-i18n="featureEverywhereTitle">你的设备都在这里</h3><p data-i18n="featureEverywhereText">支持 macOS、Windows 和 Android，在你每天使用的设备之间自由切换。</p></article><article class="feature"><div class="feature-number">03 / OPEN</div><h3 data-i18n="featureOpenTitle">保持轻盈与开放</h3><p data-i18n="featureOpenText">开源项目，透明可见。持续更新，也尊重你对工具的选择。</p></article></div></section>
+    <section class="band"><div class="band-inner wrap"><h2><span data-i18n="bandTitle">从下一次分享开始，</span><br><span data-i18n="bandTitleSecond">让事情简单一点。</span></h2><div><p data-i18n="bandText">选择你的设备，下载 Share Anything，马上开始。</p><a class="button primary" href="./downloads.html" style="margin-top:22px" data-i18n="bandDownload">前往下载页面 <span class="arrow" aria-hidden="true">↗</span></a></div></div></section>
   </main>
-  <footer><span>Share Anything</span><span>macOS · Windows · Android</span></footer>
+  <footer class="footer wrap"><span>© Share Anything</span><span><a href="./downloads.html" data-i18n="footerDownload">下载</a> · <a href="https://github.com/linuxkungfu6-stack/shareanything">GitHub ↗</a> · macOS · Windows · iOS · Android</span></footer>
   <script>
-    const translations = {
-  "zh": {
-    "heading": "选择你的设备，\n即刻开始。",
-    "intro": "下载适合你设备的 Share Anything。\n桌面安装包通过 GitHub Releases 提供，Android 版本前往 Google Play。",
-    "macDescription": "为 Apple 芯片和 Intel 芯片的 Mac\n选择对应安装包。",
-    "windowsDescription": "支持常见 Intel / AMD 电脑\n及搭载 ARM 芯片的 Windows 设备。",
-    "androidDescription": "通过 Google Play 获取应用，\n并管理后续更新。",
-    "macHint": "在“关于本机”中查看你的芯片类型。",
-    "windowsHint": "在“设置 → 系统 → 关于”中查看系统类型。",
-    "androidHint": "设备兼容性与可用地区以商店页面为准。",
-    "help": "不确定该选哪个版本？大多数 Intel / AMD Windows 电脑选择 x64；Apple M 系列 Mac 选择 Apple 芯片版。如果下载链接暂不可用，可前往版本页面查看附件。",
-    "apple": "Apple 芯片",
-    "intel": "Intel 芯片",
-    "play": "前往 Google Play",
-    "latestLink": "查看最新版本 ↗",
-    "title": "下载 Share Anything",
-    "meta": "下载 Share Anything，支持 macOS、Windows 和 Android。",
-    "platforms": "选择下载平台",
-    "status": "桌面下载指向最新正式版",
-    "release": "最新正式版",
-    "missing": "（查看版本）"
-  },
-  "en": {
-    "heading": "Choose your device.\nGet started.",
-    "intro": "Get Share Anything for your device.\nDesktop downloads are hosted on GitHub Releases. Get the Android app on Google Play.",
-    "macDescription": "Choose the installer for your Mac: Apple silicon or Intel.",
-    "windowsDescription": "For Intel / AMD PCs and ARM-based Windows devices.",
-    "androidDescription": "Get the app and manage updates through Google Play.",
-    "macHint": "Check your chip type in About This Mac.",
-    "windowsHint": "Check System type in Settings → System → About.",
-    "androidHint": "See the store listing for device compatibility and regional availability.",
-    "help": "Not sure which version to choose? Most Intel / AMD PCs use x64; Macs with M-series chips use Apple silicon. If a download is unavailable, check the assets on the release page.",
-    "apple": "Apple silicon",
-    "intel": "Intel",
-    "play": "Get it on Google Play",
-    "latestLink": "View latest release ↗",
-    "title": "Download Share Anything",
-    "meta": "Download Share Anything for macOS, Windows, and Android.",
-    "platforms": "Choose a download platform",
-    "status": "Desktop downloads link to the latest stable release",
-    "release": "Latest stable release",
-    "missing": " (View release)"
-  }
-};
-    const languageSelect = document.getElementById('language');
-    let preference = 'auto';
-    let releaseTag = '';
-    try {
-      const saved = localStorage.getItem('shareanything-language');
-      if (['auto', 'zh', 'en'].includes(saved)) preference = saved;
-    } catch { /* Storage may be unavailable in private browsing. */ }
-    function applyLanguage() {
-      const browserLanguage = navigator.languages?.[0] || navigator.language || 'en';
-      const language = preference === 'auto' ? (/^zh(?:-|$)/i.test(browserLanguage) ? 'zh' : 'en') : preference;
-      const t = translations[language];
-      document.documentElement.lang = language === 'zh' ? 'zh-CN' : 'en';
-      document.title = t.title;
-      document.querySelector('meta[name="description"]').content = t.meta;
-      document.querySelector('.grid').setAttribute('aria-label', t.platforms);
-      document.querySelectorAll('[data-i18n]').forEach(node => { node.textContent = t[node.dataset.i18n]; });
-      document.querySelectorAll('[data-missing]').forEach(node => { node.textContent = t.missing; });
-      document.getElementById('release-status').textContent = releaseTag ? `${t.release} · ${releaseTag}` : t.status;
-      languageSelect.value = preference;
-    }
-    languageSelect.addEventListener('change', () => {
-      preference = languageSelect.value;
-      try { localStorage.setItem('shareanything-language', preference); } catch {}
-      applyLanguage();
-    });
-    window.addEventListener('languagechange', applyLanguage);
-    applyLanguage();
-
-    // Static latest links also work when JavaScript or the GitHub API is unavailable.
-    async function resolveDownloads() {
-      try {
-        const response = await fetch('https://api.github.com/repos/linuxkungfu6-stack/shareanything/releases/latest');
-        if (!response.ok) return;
-        const release = await response.json();
-        if (!Array.isArray(release.assets)) return;
-        for (const link of document.querySelectorAll('[data-platform]')) {
-          const platform = link.dataset.platform;
-          const extension = platform.startsWith('mac-') ? 'dmg' : 'exe';
-          const asset = release.assets.find(item => typeof item.name === 'string' && item.name.toLowerCase().endsWith(`-${platform}.${extension}`));
-          if (asset && typeof asset.browser_download_url === 'string' && asset.browser_download_url.startsWith('https://github.com/linuxkungfu6-stack/shareanything/releases/download/')) {
-            link.href = asset.browser_download_url;
-          } else {
-            link.href = 'https://github.com/linuxkungfu6-stack/shareanything/releases/latest';
-            const notice = document.createElement('span');
-            notice.dataset.missing = '';
-            link.append(notice);
-          }
-        }
-        if (typeof release.tag_name === 'string') releaseTag = release.tag_name;
-        applyLanguage();
-      } catch { /* Preserve working static links on network errors. */ }
-    }
-    resolveDownloads();
+    const translations={zh:{navFeatures:'为什么选择',download:'立即下载 ↗',heroStart:'分享，',heroAccent:'就该这么简单。',lead:'Share Anything 把设备之间的分享变成一件顺手的事。轻巧、直接，不让文件传输打断你的节奏。',heroDownload:'选择设备并下载 →',learnMore:'了解更多 ↓',showcaseText:'让每一次分享，都少一步等待。',featuresTitle:'少一点阻力，',featuresTitleSecond:'多一点流动。',featuresIntro:'从电脑到手机，从工作文件到生活照片，Share Anything 让分享回到它本来的样子：自然。',featureSimpleTitle:'打开，就能分享',featureSimpleText:'没有复杂的设置，没有冗长的流程。把注意力留给内容，而不是工具。',featureEverywhereTitle:'你的设备都在这里',featureEverywhereText:'支持 macOS、Windows 和 Android，在你每天使用的设备之间自由切换。',featureOpenTitle:'保持轻盈与开放',featureOpenText:'开源项目，透明可见。持续更新，也尊重你对工具的选择。',bandTitle:'从下一次分享开始，',bandTitleSecond:'让事情简单一点。',bandText:'选择你的设备，下载 Share Anything，马上开始。',bandDownload:'前往下载页面 ↗',footerDownload:'下载',title:'Share Anything · 分享，就该这么简单',meta:'Share Anything，让设备之间的分享变得简单、直接、没有边界。支持 macOS、Windows 和 Android。'},en:{navFeatures:'Why Share Anything',download:'Download ↗',heroStart:'Sharing,',heroAccent:'should be this simple.',lead:'Share Anything makes sharing between devices feel effortless. Lightweight, direct, and designed to keep file transfers out of your way.',heroDownload:'Choose your device →',learnMore:'Learn more ↓',showcaseText:'One less wait in every share.',featuresTitle:'Less friction,',featuresTitleSecond:'more flow.',featuresIntro:'From computers to phones, from work files to everyday photos, Share Anything brings sharing back to what it should feel like: natural.',featureSimpleTitle:'Open. Share.',featureSimpleText:'No complicated setup or lengthy process. Keep your attention on the content, not the tool.',featureEverywhereTitle:'All your devices',featureEverywhereText:'Support for macOS, Windows, and Android, so you can move freely between the devices you use every day.',featureOpenTitle:'Light and open',featureOpenText:'An open-source project that stays transparent, keeps improving, and respects your choice of tools.',bandTitle:'Start with your next share,',bandTitleSecond:'and make it simpler.',bandText:'Choose your device, download Share Anything, and get started.',bandDownload:'Go to downloads ↗',footerDownload:'Download',title:'Share Anything · Sharing made simple',meta:'Share Anything makes sharing between devices simple, direct, and boundary-free. Available for macOS, Windows, and Android.'}};
+    const languageSelect=document.getElementById('language');let preference='auto';try{const saved=localStorage.getItem('shareanything-language');if(['auto','zh','en'].includes(saved))preference=saved}catch{}
+    function applyLanguage(){const browserLanguage=navigator.languages?.[0]||navigator.language||'en';const language=preference==='auto'?( /^zh(?:-|$)/i.test(browserLanguage)?'zh':'en'):preference;const t=translations[language];document.documentElement.lang=language==='zh'?'zh-CN':'en';document.title=t.title;document.querySelector('meta[name="description"]').content=t.meta;document.querySelectorAll('[data-i18n]').forEach(node=>{node.textContent=t[node.dataset.i18n]});languageSelect.value=preference}
+    languageSelect.addEventListener('change',()=>{preference=languageSelect.value;try{localStorage.setItem('shareanything-language',preference)}catch{}applyLanguage()});window.addEventListener('languagechange',applyLanguage);applyLanguage();
   </script>
 </body>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "fa568a961f254789b69af5d871450f90"}'></script><!-- End Cloudflare Web Analytics -->
