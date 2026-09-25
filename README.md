@@ -32,7 +32,7 @@
 
 每次发布使用独立版本 tag（例如 `v1.0.0`、`v1.1.0`），将最新正式版设为 **Latest**，并确保 Release 中的附件名称始终与上表链接一致，不带版本号。
 
-运行脚本将相邻 `share-anything/electron/dist` 中的 `.dmg` 和 `.exe` 复制到本仓库 `dist`，自动去掉文件名中的 `-X.Y.Z` 版本号，保留空格、平台和架构（覆盖目标同名文件）：
+运行脚本将相邻 `share-anything/electron/dist` 中的 `.dmg` 和 `.exe`，以及 Android 的 APK 复制到本仓库 `dist`，自动去掉桌面安装包文件名中的 `-X.Y.Z` 版本号，并将 APK 命名为 `Share.Anything.apk`（覆盖目标同名文件）：
 
 ```bash
 ./scripts/copy-release-assets.sh
@@ -40,4 +40,4 @@
 ./scripts/copy-release-assets.sh /path/to/electron/dist
 ```
 
-例如：`Share Anything-1.0.6-mac-arm64.dmg` → `dist/Share Anything-mac-arm64.dmg`。不复制 `.zip`、`.blockmap` 或子目录；源目录多个版本对应同一目标文件名时会报错，请先清理旧版本。
+例如：`Share Anything-1.0.6-mac-arm64.dmg` → `dist/Share Anything-mac-arm64.dmg`，`app-release.apk` → `dist/Share.Anything.apk`。不复制 `.zip`、`.blockmap`、`.aab` 或子目录；源目录多个版本对应同一目标文件名时会报错，请先清理旧版本。
